@@ -1,0 +1,113 @@
+# =========================
+# macOS
+# =========================
+.DS_Store
+**/.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100/
+.Trashes/
+.fseventsd
+
+# =========================
+# Python
+# =========================
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# =========================
+# Jupyter
+# =========================
+.ipynb_checkpoints/
+
+# =========================
+# Machine Learning Models
+# =========================
+*.pt
+*.pth
+*.ckpt
+*.keras
+*.h5
+*.pb
+*.onnx
+*.caffemodel
+
+# Model outputs
+outputs/
+runs/
+logs/
+checkpoints/
+
+# =========================
+# Videos
+# =========================
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.webm
+
+# =========================
+# Notebook exports
+# =========================
+*.html
+
+# =========================
+# Reports (optional)
+# Uncomment if you don't want PDFs in Git
+# =========================
+# *.pdf
+
+# =========================
+# Datasets
+# =========================
+data/
+dataset/
+datasets/
+
+# =========================
+# Environment
+# =========================
+.env
+.env.*
+
+# =========================
+# IDE
+# =========================
+.vscode/
+.idea/
+
+# =========================
+# Build / Cache
+# =========================
+.pytest_cache/
+.mypy_cache/
+.cache/
+dist/
+build/
+*.egg-info/
+
+# =========================
+# Archives
+# =========================
+*.zip
+*.tar
+*.tar.gz
+*.rar
+*.7z
+
+# =========================
+# Logs
+# =========================
+*.log
