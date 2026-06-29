@@ -19,7 +19,3 @@
 - [x] Reports MSE, MAE, PSNR, and SSIM.
 - [x] Saves restored image visualizations.
 - [x] Provides README usage instructions.
-
-Assumption:
-
-- The PDF text extraction was partially garbled, but the user-provided prompt and legible PDF fragments consistently specify the same requirements: paired supervised restoration, U-Net as a suitable option, MSE/MAE/PSNR/SSIM reporting, train/validation/test use, and the exact Hugging Face dataset.
