@@ -57,6 +57,84 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
+## Windows Setup With NVIDIA GPU
+
+Use these steps on a Windows machine that does not have Python installed yet.
+
+1. Install Python 3.11 from the official website:
+
+   https://www.python.org/downloads/release/python-3119/
+
+   During installation, enable:
+
+   ```text
+   Add python.exe to PATH
+   ```
+
+2. Open PowerShell in the project folder:
+
+   ```powershell
+   cd "path\to\CV-FinalProject-810100116-810100254"
+   ```
+
+3. Create and activate a virtual environment:
+
+   ```powershell
+   py -3.11 -m venv .venv
+   .\.venv\Scripts\Activate.ps1
+   ```
+
+   If PowerShell blocks activation, run this only for the current PowerShell session:
+
+   ```powershell
+   Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
+   .\.venv\Scripts\Activate.ps1
+   ```
+
+4. Upgrade pip:
+
+   ```powershell
+   python -m pip install --upgrade pip
+   ```
+
+5. Install PyTorch with CUDA GPU support:
+
+   ```powershell
+   pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
+   ```
+
+6. Install the remaining project dependencies:
+
+   ```powershell
+   pip install datasets Pillow matplotlib tqdm numpy
+   ```
+
+7. Verify that PyTorch can see the GPU:
+
+   ```powershell
+   python -c "import torch; print(torch.cuda.is_available()); print(torch.cuda.get_device_name(0) if torch.cuda.is_available() else 'No CUDA GPU found')"
+   ```
+
+   The first line should print:
+
+   ```text
+   True
+   ```
+
+8. Run the smoke test:
+
+   ```powershell
+   python training/train.py --epochs 1 --train-subset 16 --val-subset 8 --test-subset 8 --base-channels 16
+   ```
+
+9. Run full training:
+
+   ```powershell
+   python training/train.py --epochs 20 --batch-size 8 --image-size 256
+   ```
+
+If CUDA is not detected, update the NVIDIA driver and repeat steps 5 to 7. Do not use the CPU-only PyTorch install if you want GPU training.
+
 ## Train
 
 ```bash
